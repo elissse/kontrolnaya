@@ -24,7 +24,15 @@ public class TemplateHandlerServlet extends HttpServlet {
         cfg.setClassForTemplateLoading(TemplateHandlerServlet.class, "/templates");
         cfg.setDefaultEncoding("UTF-8");
         System.out.println("hiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiiii");
-        Template template = cfg.getTemplate((String) request.getAttribute("template"));
+        String templ = (String) request.getAttribute("template");
+        Template template;
+        if (!templ.equals("all_sports_equipment.ftl")){
+            template = cfg.getTemplate("view_sports_equipment.ftl");
+            request.setAttribute("sports_equipment", templ);
+        }else {
+            template = cfg.getTemplate((String) request.getAttribute("template"));
+        }
+
         Map<String, Object> data = new HashMap<>();
         InputStream inputStream = TemplateHandlerServlet.class.getClassLoader().getResourceAsStream(request.getServletPath());
         byte[] content = inputStream.readAllBytes();
