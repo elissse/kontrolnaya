@@ -29,6 +29,7 @@ public class TemplateHandlerServlet extends HttpServlet {
         if (!templ.equals("all_sports_equipment.ftl")){
             template = cfg.getTemplate("view_sports_equipment.ftl");
             request.setAttribute("sports_equipment", templ);
+            System.out.println(templ);
         }else {
             template = cfg.getTemplate((String) request.getAttribute("template"));
         }

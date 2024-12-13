@@ -11,7 +11,7 @@
     <#list sports_equipment_list as sports_equipment>
         <form method="get" action="${sports_equipment.name()}.ftl">
             <div class="form-group form-button">
-                <a href="view_sports_equipment.ftl" >${sports_equipment.name()}</a>
+                <a href="view_sports_equipment" >${sports_equipment.name()}</a>
 
             </div>
         </form>

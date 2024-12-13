@@ -10,8 +10,7 @@ import java.io.IOException;
 
 @WebServlet("/view_sports_equipment")
 public class ViewSportsEquipmentServlet extends HttpServlet {
-    protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-        request.setAttribute("template", "view_sports_equipment.ftl");
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         request.getRequestDispatcher("/templates/view_sports_equipment.ftl").forward(request, response);
     }
 

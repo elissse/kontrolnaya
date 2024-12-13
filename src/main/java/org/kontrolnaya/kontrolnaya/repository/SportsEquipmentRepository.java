@@ -11,10 +11,7 @@ import java.util.Optional;
 
 
 public class SportsEquipmentRepository extends AbstractRepository<SportsEquipment>{
-    private static final String SQL_SAVE = "INSERT INTO sports_equipment (name, parameters, age, accommodationConditions) VALUES (?, ?, ?, ?)";
     private static final String SQL_GET_ALL = "SELECT * FROM sports_equipment";
-    private static final String SQL_FIND_BY_ID = "SELECT * FROM sports_equipment WHERE id = ?";
-    private static final String SQL_DELETE_BY_ID = "DELETE FROM sports_equipment WHERE id = ?";
     public SportsEquipmentRepository(SportsEquipmentRecordMapper mapper) {
         this.mapper = mapper;
     }
